@@ -1,4 +1,4 @@
-import { emitClientRaw, Player } from 'alt-server';
+import { emitClientRaw, Player, emit } from 'alt-server';
 import type { CommandSuggestion } from '@altv-vchat/shared';
 import type { CommandHandler } from '../types';
 import { validateCommandName, validateCommandSuggestion } from '../validators';
@@ -11,6 +11,13 @@ export class CommandService {
     public register(command: string, handler: CommandHandler) {
         if (!validateCommandName(command)) return;
         this.handlers.set(command, handler);
+    }
+
+    public registerCallback(command: string, callback: string) {
+        if (!validateCommandName(command)) return;
+        this.handlers.set(command, (player, args)=>{
+            emit(callback, player, args);
+        });
     }
 
     public unregister(command: string) {
