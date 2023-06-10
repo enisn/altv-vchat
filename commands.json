@@ -1,4 +1,71 @@
 {
-    "$schema": "https://raw.githubusercontent.com/5exyGuy/altv-vchat/master/schemas/commands.schema.json",
-    "commandSuggestions": []
+  "commandSuggestions": [
+    {
+      "name": "pos",
+      "description": null,
+      "parameters": []
+    },
+    {
+      "name": "train",
+      "description": null,
+      "parameters": [
+        {
+          "name": "trainName",
+          "description": null
+        },
+        {
+          "name": "trackId",
+          "description": null
+        }
+      ]
+    },
+    {
+      "name": "v",
+      "description": null,
+      "parameters": [
+        {
+          "name": "VehicleName",
+          "description": null
+        },
+        {
+          "name": "color1",
+          "description": null
+        },
+        {
+          "name": "color2",
+          "description": null
+        }
+      ]
+    },
+    {
+      "name": "o",
+      "description": null,
+      "parameters": [
+        {
+          "name": "type",
+          "description": null
+        }
+      ]
+    },
+    {
+      "name": "p",
+      "description": null,
+      "parameters": [
+        {
+          "name": "type",
+          "description": null
+        }
+      ]
+    },
+    {
+      "name": "ping",
+      "description": null,
+      "parameters": [
+        {
+          "name": "type",
+          "description": null
+        }
+      ]
+    }
+  ]
 }

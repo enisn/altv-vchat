@@ -104,7 +104,17 @@ export class Chat {
     }
 
     public sendMessageToServer(message: string) {
-        if (message.length > 0) this.eventService.emitServer('vchat:sendMessage', message);
+        if (message.length <= 0) 
+        {
+            return;
+        }
+
+        if(message.startsWith("/")){
+            this.eventService.emit("chat:message", message);
+        }
+        else{
+            this.eventService.emitServer('vchat:sendMessage', message);
+        }
         this.windowService.unfocus();
     }
 }
